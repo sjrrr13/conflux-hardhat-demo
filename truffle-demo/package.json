@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@confluxfans/contracts": "^0.2.7",
+    "@openzeppelin/contracts": "^4.7.2",
+    "js-conflux-sdk": "^2.1.6"
+  }
+}

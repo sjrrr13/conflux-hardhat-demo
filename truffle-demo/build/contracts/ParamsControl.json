@@ -1,0 +1,1804 @@
+{
+  "contractName": "ParamsControl",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint64",
+          "name": "vote_round",
+          "type": "uint64"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint16",
+          "name": "topic_index",
+          "type": "uint16"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[3]",
+          "name": "votes",
+          "type": "uint256[3]"
+        }
+      ],
+      "name": "CastVote",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint64",
+          "name": "vote_round",
+          "type": "uint64"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint16",
+          "name": "topic_index",
+          "type": "uint16"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[3]",
+          "name": "votes",
+          "type": "uint256[3]"
+        }
+      ],
+      "name": "RevokeVote",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "vote_round",
+          "type": "uint64"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint16",
+              "name": "topic_index",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint256[3]",
+              "name": "votes",
+              "type": "uint256[3]"
+            }
+          ],
+          "internalType": "struct ParamsControl.Vote[]",
+          "name": "vote_data",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "castVote",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "readVote",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint16",
+              "name": "topic_index",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint256[3]",
+              "name": "votes",
+              "type": "uint256[3]"
+            }
+          ],
+          "internalType": "struct ParamsControl.Vote[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "voteRound",
+      "outputs": [
+        {
+          "internalType": "uint64",
+          "name": "",
+          "type": "uint64"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "vote_round",
+          "type": "uint64"
+        }
+      ],
+      "name": "totalVotes",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint16",
+              "name": "topic_index",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint256[3]",
+              "name": "votes",
+              "type": "uint256[3]"
+            }
+          ],
+          "internalType": "struct ParamsControl.Vote[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint64\",\"name\":\"vote_round\",\"type\":\"uint64\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint16\",\"name\":\"topic_index\",\"type\":\"uint16\"},{\"indexed\":false,\"internalType\":\"uint256[3]\",\"name\":\"votes\",\"type\":\"uint256[3]\"}],\"name\":\"CastVote\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint64\",\"name\":\"vote_round\",\"type\":\"uint64\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint16\",\"name\":\"topic_index\",\"type\":\"uint16\"},{\"indexed\":false,\"internalType\":\"uint256[3]\",\"name\":\"votes\",\"type\":\"uint256[3]\"}],\"name\":\"RevokeVote\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"vote_round\",\"type\":\"uint64\"},{\"components\":[{\"internalType\":\"uint16\",\"name\":\"topic_index\",\"type\":\"uint16\"},{\"internalType\":\"uint256[3]\",\"name\":\"votes\",\"type\":\"uint256[3]\"}],\"internalType\":\"struct ParamsControl.Vote[]\",\"name\":\"vote_data\",\"type\":\"tuple[]\"}],\"name\":\"castVote\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"readVote\",\"outputs\":[{\"components\":[{\"internalType\":\"uint16\",\"name\":\"topic_index\",\"type\":\"uint16\"},{\"internalType\":\"uint256[3]\",\"name\":\"votes\",\"type\":\"uint256[3]\"}],\"internalType\":\"struct ParamsControl.Vote[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"vote_round\",\"type\":\"uint64\"}],\"name\":\"totalVotes\",\"outputs\":[{\"components\":[{\"internalType\":\"uint16\",\"name\":\"topic_index\",\"type\":\"uint16\"},{\"internalType\":\"uint256[3]\",\"name\":\"votes\",\"type\":\"uint256[3]\"}],\"internalType\":\"struct ParamsControl.Vote[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"voteRound\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"castVote(uint64,(uint16,uint256[3])[])\":{\"details\":\"cast vote for parameters\",\"params\":{\"vote_data\":\"The list of votes to cast\",\"vote_round\":\"The round to vote for\"}},\"readVote(address)\":{\"details\":\"read the vote data of an account\",\"params\":{\"addr\":\"The address of the account to read\"}},\"totalVotes(uint64)\":{\"details\":\"read the total votes of given round\",\"params\":{\"vote_round\":\"The vote number\"}},\"voteRound()\":{\"details\":\"Current vote round\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@confluxfans/contracts/InternalContracts/ParamsControl.sol\":\"ParamsControl\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@confluxfans/contracts/InternalContracts/ParamsControl.sol\":{\"keccak256\":\"0x97935f05f27ceea088a6f511c2a7d3977c52d9372e74b07d2a3a9e16b8b32741\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e28a2b44c4636f32baf40c55e057f41d2f33eed22107c44a1bbf1d9adc1d8c83\",\"dweb:/ipfs/QmSPxBosBkhnCPeQoy2tGzAEr9wUT2yXryrWZ1GBj4ekgx\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity >=0.8.0;\n\ninterface ParamsControl {\n    struct Vote {\n        uint16 topic_index;\n        uint256[3] votes;\n    }\n\n    /*** Query Functions ***/\n    /**\n     * @dev cast vote for parameters\n     * @param vote_round The round to vote for\n     * @param vote_data The list of votes to cast\n     */\n    function castVote(uint64 vote_round, Vote[] calldata vote_data) external;\n\n    /**\n     * @dev read the vote data of an account\n     * @param addr The address of the account to read\n     */\n    function readVote(address addr) external view returns (Vote[] memory);\n\n    /**\n     * @dev Current vote round\n     */\n    function voteRound() external view returns (uint64);\n\n    /**\n     * @dev read the total votes of given round\n     * @param vote_round The vote number\n     */\n    function totalVotes(uint64 vote_round) external view returns (Vote[] memory);\n\n    event CastVote(uint64 indexed vote_round, address indexed addr, uint16 indexed topic_index, uint256[3] votes);\n    event RevokeVote(uint64 indexed vote_round, address indexed addr, uint16 indexed topic_index, uint256[3] votes);\n}\n",
+  "sourcePath": "@confluxfans/contracts/InternalContracts/ParamsControl.sol",
+  "ast": {
+    "absolutePath": "@confluxfans/contracts/InternalContracts/ParamsControl.sol",
+    "exportedSymbols": {
+      "ParamsControl": [
+        732
+      ]
+    },
+    "id": 733,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 664,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:24:7"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 732,
+        "linearizedBaseContracts": [
+          732
+        ],
+        "name": "ParamsControl",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "ParamsControl.Vote",
+            "id": 671,
+            "members": [
+              {
+                "constant": false,
+                "id": 666,
+                "mutability": "mutable",
+                "name": "topic_index",
+                "nodeType": "VariableDeclaration",
+                "scope": 671,
+                "src": "111:18:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint16",
+                  "typeString": "uint16"
+                },
+                "typeName": {
+                  "id": 665,
+                  "name": "uint16",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "111:6:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 670,
+                "mutability": "mutable",
+                "name": "votes",
+                "nodeType": "VariableDeclaration",
+                "scope": 671,
+                "src": "139:16:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint256_$3_storage_ptr",
+                  "typeString": "uint256[3]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 667,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "139:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 669,
+                  "length": {
+                    "hexValue": "33",
+                    "id": 668,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "147:1:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_3_by_1",
+                      "typeString": "int_const 3"
+                    },
+                    "value": "3"
+                  },
+                  "nodeType": "ArrayTypeName",
+                  "src": "139:10:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$3_storage_ptr",
+                    "typeString": "uint256[3]"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Vote",
+            "nodeType": "StructDefinition",
+            "scope": 732,
+            "src": "89:73:7",
+            "visibility": "public"
+          },
+          {
+            "documentation": {
+              "id": 672,
+              "nodeType": "StructuredDocumentation",
+              "src": "198:145:7",
+              "text": " @dev cast vote for parameters\n @param vote_round The round to vote for\n @param vote_data The list of votes to cast"
+            },
+            "functionSelector": "0bf64c90",
+            "id": 681,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "castVote",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 679,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 674,
+                  "mutability": "mutable",
+                  "name": "vote_round",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 681,
+                  "src": "366:17:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 673,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "366:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 678,
+                  "mutability": "mutable",
+                  "name": "vote_data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 681,
+                  "src": "385:25:7",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Vote_$671_calldata_ptr_$dyn_calldata_ptr",
+                    "typeString": "struct ParamsControl.Vote[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 676,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 675,
+                        "name": "Vote",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 671,
+                        "src": "385:4:7"
+                      },
+                      "referencedDeclaration": 671,
+                      "src": "385:4:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Vote_$671_storage_ptr",
+                        "typeString": "struct ParamsControl.Vote"
+                      }
+                    },
+                    "id": 677,
+                    "nodeType": "ArrayTypeName",
+                    "src": "385:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Vote_$671_storage_$dyn_storage_ptr",
+                      "typeString": "struct ParamsControl.Vote[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "365:46:7"
+            },
+            "returnParameters": {
+              "id": 680,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "420:0:7"
+            },
+            "scope": 732,
+            "src": "348:73:7",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 682,
+              "nodeType": "StructuredDocumentation",
+              "src": "427:110:7",
+              "text": " @dev read the vote data of an account\n @param addr The address of the account to read"
+            },
+            "functionSelector": "d28c9ad0",
+            "id": 691,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "readVote",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 685,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 684,
+                  "mutability": "mutable",
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 691,
+                  "src": "560:12:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 683,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "560:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "559:14:7"
+            },
+            "returnParameters": {
+              "id": 690,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 689,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 691,
+                  "src": "597:13:7",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Vote_$671_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct ParamsControl.Vote[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 687,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 686,
+                        "name": "Vote",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 671,
+                        "src": "597:4:7"
+                      },
+                      "referencedDeclaration": 671,
+                      "src": "597:4:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Vote_$671_storage_ptr",
+                        "typeString": "struct ParamsControl.Vote"
+                      }
+                    },
+                    "id": 688,
+                    "nodeType": "ArrayTypeName",
+                    "src": "597:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Vote_$671_storage_$dyn_storage_ptr",
+                      "typeString": "struct ParamsControl.Vote[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "596:15:7"
+            },
+            "scope": 732,
+            "src": "542:70:7",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 692,
+              "nodeType": "StructuredDocumentation",
+              "src": "618:42:7",
+              "text": " @dev Current vote round"
+            },
+            "functionSelector": "e3646b72",
+            "id": 697,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "voteRound",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 693,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "683:2:7"
+            },
+            "returnParameters": {
+              "id": 696,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 695,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 697,
+                  "src": "709:6:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 694,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "709:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "708:8:7"
+            },
+            "scope": 732,
+            "src": "665:52:7",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 698,
+              "nodeType": "StructuredDocumentation",
+              "src": "723:100:7",
+              "text": " @dev read the total votes of given round\n @param vote_round The vote number"
+            },
+            "functionSelector": "d16bc6b3",
+            "id": 707,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "totalVotes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 701,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 700,
+                  "mutability": "mutable",
+                  "name": "vote_round",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 707,
+                  "src": "848:17:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 699,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "848:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "847:19:7"
+            },
+            "returnParameters": {
+              "id": 706,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 705,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 707,
+                  "src": "890:13:7",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Vote_$671_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct ParamsControl.Vote[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 703,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 702,
+                        "name": "Vote",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 671,
+                        "src": "890:4:7"
+                      },
+                      "referencedDeclaration": 671,
+                      "src": "890:4:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Vote_$671_storage_ptr",
+                        "typeString": "struct ParamsControl.Vote"
+                      }
+                    },
+                    "id": 704,
+                    "nodeType": "ArrayTypeName",
+                    "src": "890:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Vote_$671_storage_$dyn_storage_ptr",
+                      "typeString": "struct ParamsControl.Vote[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "889:15:7"
+            },
+            "scope": 732,
+            "src": "828:77:7",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "id": 719,
+            "name": "CastVote",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 718,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 709,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "vote_round",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 719,
+                  "src": "926:25:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 708,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "926:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 711,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 719,
+                  "src": "953:20:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 710,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "953:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 713,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "topic_index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 719,
+                  "src": "975:26:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 712,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "975:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 717,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "votes",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 719,
+                  "src": "1003:16:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$3_memory_ptr",
+                    "typeString": "uint256[3]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 714,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1003:7:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 716,
+                    "length": {
+                      "hexValue": "33",
+                      "id": 715,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1011:1:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_3_by_1",
+                        "typeString": "int_const 3"
+                      },
+                      "value": "3"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "1003:10:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$3_storage_ptr",
+                      "typeString": "uint256[3]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "925:95:7"
+            },
+            "src": "911:110:7"
+          },
+          {
+            "anonymous": false,
+            "id": 731,
+            "name": "RevokeVote",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 730,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 721,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "vote_round",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 731,
+                  "src": "1043:25:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 720,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1043:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 723,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 731,
+                  "src": "1070:20:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 722,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1070:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 725,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "topic_index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 731,
+                  "src": "1092:26:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 724,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1092:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 729,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "votes",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 731,
+                  "src": "1120:16:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$3_memory_ptr",
+                    "typeString": "uint256[3]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 726,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1120:7:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 728,
+                    "length": {
+                      "hexValue": "33",
+                      "id": 727,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1128:1:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_3_by_1",
+                        "typeString": "int_const 3"
+                      },
+                      "value": "3"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "1120:10:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$3_storage_ptr",
+                      "typeString": "uint256[3]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1042:95:7"
+            },
+            "src": "1026:112:7"
+          }
+        ],
+        "scope": 733,
+        "src": "59:1081:7"
+      }
+    ],
+    "src": "33:1108:7"
+  },
+  "legacyAST": {
+    "absolutePath": "@confluxfans/contracts/InternalContracts/ParamsControl.sol",
+    "exportedSymbols": {
+      "ParamsControl": [
+        732
+      ]
+    },
+    "id": 733,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 664,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:24:7"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 732,
+        "linearizedBaseContracts": [
+          732
+        ],
+        "name": "ParamsControl",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "ParamsControl.Vote",
+            "id": 671,
+            "members": [
+              {
+                "constant": false,
+                "id": 666,
+                "mutability": "mutable",
+                "name": "topic_index",
+                "nodeType": "VariableDeclaration",
+                "scope": 671,
+                "src": "111:18:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint16",
+                  "typeString": "uint16"
+                },
+                "typeName": {
+                  "id": 665,
+                  "name": "uint16",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "111:6:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 670,
+                "mutability": "mutable",
+                "name": "votes",
+                "nodeType": "VariableDeclaration",
+                "scope": 671,
+                "src": "139:16:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint256_$3_storage_ptr",
+                  "typeString": "uint256[3]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 667,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "139:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 669,
+                  "length": {
+                    "hexValue": "33",
+                    "id": 668,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "147:1:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_3_by_1",
+                      "typeString": "int_const 3"
+                    },
+                    "value": "3"
+                  },
+                  "nodeType": "ArrayTypeName",
+                  "src": "139:10:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$3_storage_ptr",
+                    "typeString": "uint256[3]"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Vote",
+            "nodeType": "StructDefinition",
+            "scope": 732,
+            "src": "89:73:7",
+            "visibility": "public"
+          },
+          {
+            "documentation": {
+              "id": 672,
+              "nodeType": "StructuredDocumentation",
+              "src": "198:145:7",
+              "text": " @dev cast vote for parameters\n @param vote_round The round to vote for\n @param vote_data The list of votes to cast"
+            },
+            "functionSelector": "0bf64c90",
+            "id": 681,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "castVote",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 679,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 674,
+                  "mutability": "mutable",
+                  "name": "vote_round",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 681,
+                  "src": "366:17:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 673,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "366:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 678,
+                  "mutability": "mutable",
+                  "name": "vote_data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 681,
+                  "src": "385:25:7",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Vote_$671_calldata_ptr_$dyn_calldata_ptr",
+                    "typeString": "struct ParamsControl.Vote[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 676,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 675,
+                        "name": "Vote",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 671,
+                        "src": "385:4:7"
+                      },
+                      "referencedDeclaration": 671,
+                      "src": "385:4:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Vote_$671_storage_ptr",
+                        "typeString": "struct ParamsControl.Vote"
+                      }
+                    },
+                    "id": 677,
+                    "nodeType": "ArrayTypeName",
+                    "src": "385:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Vote_$671_storage_$dyn_storage_ptr",
+                      "typeString": "struct ParamsControl.Vote[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "365:46:7"
+            },
+            "returnParameters": {
+              "id": 680,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "420:0:7"
+            },
+            "scope": 732,
+            "src": "348:73:7",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 682,
+              "nodeType": "StructuredDocumentation",
+              "src": "427:110:7",
+              "text": " @dev read the vote data of an account\n @param addr The address of the account to read"
+            },
+            "functionSelector": "d28c9ad0",
+            "id": 691,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "readVote",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 685,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 684,
+                  "mutability": "mutable",
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 691,
+                  "src": "560:12:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 683,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "560:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "559:14:7"
+            },
+            "returnParameters": {
+              "id": 690,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 689,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 691,
+                  "src": "597:13:7",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Vote_$671_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct ParamsControl.Vote[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 687,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 686,
+                        "name": "Vote",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 671,
+                        "src": "597:4:7"
+                      },
+                      "referencedDeclaration": 671,
+                      "src": "597:4:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Vote_$671_storage_ptr",
+                        "typeString": "struct ParamsControl.Vote"
+                      }
+                    },
+                    "id": 688,
+                    "nodeType": "ArrayTypeName",
+                    "src": "597:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Vote_$671_storage_$dyn_storage_ptr",
+                      "typeString": "struct ParamsControl.Vote[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "596:15:7"
+            },
+            "scope": 732,
+            "src": "542:70:7",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 692,
+              "nodeType": "StructuredDocumentation",
+              "src": "618:42:7",
+              "text": " @dev Current vote round"
+            },
+            "functionSelector": "e3646b72",
+            "id": 697,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "voteRound",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 693,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "683:2:7"
+            },
+            "returnParameters": {
+              "id": 696,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 695,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 697,
+                  "src": "709:6:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 694,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "709:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "708:8:7"
+            },
+            "scope": 732,
+            "src": "665:52:7",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 698,
+              "nodeType": "StructuredDocumentation",
+              "src": "723:100:7",
+              "text": " @dev read the total votes of given round\n @param vote_round The vote number"
+            },
+            "functionSelector": "d16bc6b3",
+            "id": 707,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "totalVotes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 701,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 700,
+                  "mutability": "mutable",
+                  "name": "vote_round",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 707,
+                  "src": "848:17:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 699,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "848:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "847:19:7"
+            },
+            "returnParameters": {
+              "id": 706,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 705,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 707,
+                  "src": "890:13:7",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Vote_$671_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct ParamsControl.Vote[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 703,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 702,
+                        "name": "Vote",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 671,
+                        "src": "890:4:7"
+                      },
+                      "referencedDeclaration": 671,
+                      "src": "890:4:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Vote_$671_storage_ptr",
+                        "typeString": "struct ParamsControl.Vote"
+                      }
+                    },
+                    "id": 704,
+                    "nodeType": "ArrayTypeName",
+                    "src": "890:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Vote_$671_storage_$dyn_storage_ptr",
+                      "typeString": "struct ParamsControl.Vote[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "889:15:7"
+            },
+            "scope": 732,
+            "src": "828:77:7",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "id": 719,
+            "name": "CastVote",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 718,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 709,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "vote_round",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 719,
+                  "src": "926:25:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 708,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "926:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 711,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 719,
+                  "src": "953:20:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 710,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "953:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 713,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "topic_index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 719,
+                  "src": "975:26:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 712,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "975:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 717,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "votes",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 719,
+                  "src": "1003:16:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$3_memory_ptr",
+                    "typeString": "uint256[3]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 714,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1003:7:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 716,
+                    "length": {
+                      "hexValue": "33",
+                      "id": 715,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1011:1:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_3_by_1",
+                        "typeString": "int_const 3"
+                      },
+                      "value": "3"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "1003:10:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$3_storage_ptr",
+                      "typeString": "uint256[3]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "925:95:7"
+            },
+            "src": "911:110:7"
+          },
+          {
+            "anonymous": false,
+            "id": 731,
+            "name": "RevokeVote",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 730,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 721,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "vote_round",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 731,
+                  "src": "1043:25:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 720,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1043:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 723,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 731,
+                  "src": "1070:20:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 722,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1070:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 725,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "topic_index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 731,
+                  "src": "1092:26:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 724,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1092:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 729,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "votes",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 731,
+                  "src": "1120:16:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$3_memory_ptr",
+                    "typeString": "uint256[3]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 726,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1120:7:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 728,
+                    "length": {
+                      "hexValue": "33",
+                      "id": 727,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1128:1:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_3_by_1",
+                        "typeString": "int_const 3"
+                      },
+                      "value": "3"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "1120:10:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$3_storage_ptr",
+                      "typeString": "uint256[3]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1042:95:7"
+            },
+            "src": "1026:112:7"
+          }
+        ],
+        "scope": 733,
+        "src": "59:1081:7"
+      }
+    ],
+    "src": "33:1108:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.1+commit.df193b15.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2022-08-09T03:45:47.944Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "castVote(uint64,(uint16,uint256[3])[])": {
+        "details": "cast vote for parameters",
+        "params": {
+          "vote_data": "The list of votes to cast",
+          "vote_round": "The round to vote for"
+        }
+      },
+      "readVote(address)": {
+        "details": "read the vote data of an account",
+        "params": {
+          "addr": "The address of the account to read"
+        }
+      },
+      "totalVotes(uint64)": {
+        "details": "read the total votes of given round",
+        "params": {
+          "vote_round": "The vote number"
+        }
+      },
+      "voteRound()": {
+        "details": "Current vote round"
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
